@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from io import StringIO
+
+df = pd.read_csv("https://bit.ly/4nejNue")
+
+print(" Descriptive Statistics ")
+print(df.describe())
+
+print("\n MEANs")
+print(df.mean(numeric_only=True))
+
+print("\n MEDIANs")
+print(df.median(numeric_only=True))
+
+print("\n STANDARD DEVIATIONs")
+print(df.std(numeric_only=True))
+
+df.hist(figsize=(10, 8), edgecolor='black')
+plt.suptitle('Feature Histograms', fontsize=16)
+plt.tight_layout()
+plt.show()
